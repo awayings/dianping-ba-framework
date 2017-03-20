@@ -9,6 +9,8 @@
         <module>demo-api</module>
         <module>demo-biz</module>
         <module>demo-service</module>
+        <module>demo-dao</module>
+        <module>demo-common</module>
     </modules>
 
     <parent>
@@ -21,9 +23,11 @@
     <artifactId>Demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+
+    </properties>
 
     <dependencyManagement>
-
         <dependencies>
             <dependency>
                 <groupId>com.sankuai</groupId>
@@ -32,6 +36,40 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+
+            <!--<dependency>-->
+                <!--<groupId>org.aspectj</groupId>-->
+                <!--<artifactId>aspectjrt</artifactId>-->
+                <!--<version>${aspectjrt.version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.aspectj</groupId>-->
+                <!--<artifactId>aspectjweaver</artifactId>-->
+                <!--<version>${aspectjweaver-version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>cglib</groupId>-->
+                <!--<artifactId>cglib-nodep</artifactId>-->
+                <!--<version>${cglib-nodep-version}</version>-->
+            <!--</dependency>-->
+
+            <!--&lt;!&ndash;++++++++++++++++++ test ++++++++++++++++++++&ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-test</artifactId>-->
+                <!--<version>${spring-version}</version>-->
+                <!--<scope>test</scope>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>junit</groupId>-->
+                <!--<artifactId>junit</artifactId>-->
+                <!--<version>${junit-version}</version>-->
+                <!--<scope>test</scope>-->
+            <!--</dependency>-->
 
         </dependencies>
     </dependencyManagement>
