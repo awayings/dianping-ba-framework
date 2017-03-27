@@ -43,17 +43,14 @@
 
 
         <!--++++++++++++++++++ log +++++++++++++++++++-->
-
         <dependency>
             <groupId>com.meituan.inf</groupId>
             <artifactId>xmd-log4j2</artifactId>
-            <version>1.1.1</version>
         </dependency>
         <!--如果线上服务已接入scribe-log4j2，请升级到本版本。注意groupId已变更-->
         <dependency>
             <groupId>com.meituan.log</groupId>
             <artifactId>scribe-log4j2</artifactId>
-            <version>1.2.6</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
@@ -62,43 +59,36 @@
             </exclusions>
         </dependency>
 
-        <!--
-            ++++++++++++++++++++++++++++++++++++ aop
-            ++++++++++++++++++++++++++++++++++++
-        -->
+        <!--++++++++++++++++++ aop ++++++++++++++++++++-->
 
-        <!--<dependency>-->
-            <!--<groupId>org.aspectj</groupId>-->
-            <!--<artifactId>aspectjrt</artifactId>-->
-            <!--<version>${aspectjrt-version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.aspectj</groupId>-->
-            <!--<artifactId>aspectjweaver</artifactId>-->
-            <!--<version>${aspectjweaver-version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>cglib</groupId>-->
-            <!--<artifactId>cglib-nodep</artifactId>-->
-            <!--<version>${cglib-nodep-version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+        </dependency>
 
-        <!--&lt;!&ndash;++++++++++++++++++ test ++++++++++++++++++++&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-test</artifactId>-->
-            <!--<version>${spring-version}</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
+        <!--++++++++++++++++++ test ++++++++++++++++++++-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>junit</groupId>-->
-            <!--<artifactId>junit</artifactId>-->
-            <!--<version>${junit-version}</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
 
     </dependencies>
 </project>
