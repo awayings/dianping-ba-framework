@@ -10,7 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>demo-common</artifactId>
-
+    <version>${project-common-version}</version>
+    <description>Project Demo Common Libs and Utils</description>
 
     <dependencies>
 
@@ -60,7 +61,6 @@
         </dependency>
 
         <!--++++++++++++++++++ aop ++++++++++++++++++++-->
-
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>

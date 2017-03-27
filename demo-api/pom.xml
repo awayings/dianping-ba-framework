@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>demo-api</artifactId>
-
+    <description>Demo API</description>
+    <version>${project-api-version}</version>
 
 </project>

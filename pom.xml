@@ -25,7 +25,13 @@
 
     <properties>
 
+        <!-- ++++++++++++++++++++++++++++++++++++ Project Module versions ++++++++++++++++++++++++++++++++++++ -->
         <project-api-version>0.0.2-SNAPSHOT</project-api-version>
+        <project-biz-version>1.0.0-SNAPSHOT</project-biz-version>
+        <project-common-version>1.0.0-SNAPSHOT</project-common-version>
+        <project-dao-version>1.0.0-SNAPSHOT</project-dao-version>
+        <project-service-version>1.0.0-SNAPSHOT</project-service-version>
+        <project-web-version>1.0.0-SNAPSHOT</project-web-version>
 
         <!-- ++++++++++++++++++++++++++++++++++++ DP Framework versions ++++++++++++++++++++++++++++++++++++ -->
         <inf.bom.version>1.1.11</inf.bom.version>
@@ -33,13 +39,9 @@
         <!-- ++++++++++++++++++++++++++++++++++++ Pigeon versions ++++++++++++++++++++++++++++++++++++ -->
         <workflow-message-api-version>0.0.9-SNAPSHOT</workflow-message-api-version>
 
-        <!-- ++++++++++++++++++++++++++++++++++++ Demo Common versions ++++++++++++++++++++++++++++++++++++ -->
-        <aspectjrt.version>1.8.4</aspectjrt.version>
-        <!--<c3p0-version>0.9.1.2</c3p0-version>-->
-        <cglib-nodep-version>3.1</cglib-nodep-version>
 
         <!-- ++++++++++++++++++++++++++++++++++++ Overwrite parent version ++++++++++++++++++++++++++++++++++++ -->
-        <xmd-log4j2.version>1.0.0</xmd-log4j2.version>
+        <!--<xmd-log4j2.version>1.0.0</xmd-log4j2.version>-->
 
     </properties>
 
@@ -53,46 +55,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <!--++++++++++++++++++ AOP ++++++++++++++++++++-->
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjrt</artifactId>
-                <version>${aspectjrt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjweaver</artifactId>
-                <version>${aspectjrt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib-nodep</artifactId>
-                <version>${cglib-nodep-version}</version>
-            </dependency>
-
-            <!--++++++++++++++++++ test ++++++++++++++++++++-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-test</artifactId>-->
-                <!--<version>${spring-version}</version>-->
-                <!--<scope>test</scope>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>junit</groupId>-->
-                <!--<artifactId>junit</artifactId>-->
-                <!--<version>${junit-version}</version>-->
-                <!--<scope>test</scope>-->
-            <!--</dependency>-->
-
-            <!--<dependency>-->
-                <!--<groupId>com.meituan.inf</groupId>-->
-                <!--<artifactId>xmd-log4j2</artifactId>-->
-                <!--<version>${xmd-log4j2.version}</version>-->
-            <!--</dependency>-->
 
         </dependencies>
     </dependencyManagement>

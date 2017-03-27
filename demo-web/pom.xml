@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>demo-web</artifactId>
-
-
+    <version>${project-web-version}</version>
+    <description>Project Web Applications</description>
 
 </project>

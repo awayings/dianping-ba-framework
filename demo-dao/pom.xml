@@ -10,8 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>demo-dao</artifactId>
+    <version>${project-dao-version}</version>
+    <description>Project Demo Dao</description>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.dianping.ba.es.demo</groupId>
+            <artifactId>demo-common</artifactId>
+            <version>${project-common-version}</version>
+        </dependency>
 
     </dependencies>
 </project>
