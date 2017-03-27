@@ -1,4 +1,4 @@
-package com.dianping.ba.es.demo.biz;
+package com.dianping.ba.es.demo;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

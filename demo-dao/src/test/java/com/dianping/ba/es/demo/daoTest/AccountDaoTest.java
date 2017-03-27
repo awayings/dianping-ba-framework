@@ -1,6 +1,6 @@
-package com.dianping.ba.es.demo.biz.daoTest;
+package com.dianping.ba.es.demo.daoTest;
 
-import com.dianping.ba.es.demo.biz.TestBase;
+import com.dianping.ba.es.demo.TestBase;
 import com.dianping.ba.es.demo.dao.AccountDao;
 import com.dianping.ba.es.demo.dao.po.AccountPO;
 import org.junit.Test;
