@@ -42,7 +42,6 @@
             <scope>compile</scope>
         </dependency>
 
-
         <!--++++++++++++++++++ log +++++++++++++++++++-->
         <dependency>
             <groupId>com.meituan.inf</groupId>
@@ -76,6 +75,18 @@
             <artifactId>cglib-nodep</artifactId>
         </dependency>
 
+        <!--++++++++++++++++++ Libs ++++++++++++++++++++-->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+
+
         <!--++++++++++++++++++ test ++++++++++++++++++++-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -88,7 +99,6 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
 </project>

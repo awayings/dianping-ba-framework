@@ -15,10 +15,32 @@
 
     <dependencies>
 
+        <!-- Module Dependency -->
         <dependency>
             <groupId>com.dianping.ba.es.demo</groupId>
             <artifactId>demo-common</artifactId>
             <version>${project-common-version}</version>
+        </dependency>
+
+        <!-- External Dependency -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
         </dependency>
 
     </dependencies>
