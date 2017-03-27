@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dao.dataSource" class="com.dianping.zebra.group.jdbc.GroupDataSource" init-method="init">
+		<property name="jdbcRef" value="dianpingba_account" />
+	</bean>
+
+	<!-- transaction domain, use JtaTransactionManager for global tx -->
+	<bean id="dao.transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dao.dataSource" />
+	</bean>
+
+	<!-- define the SqlSessionFactory -->
+	<bean id="dao.sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dao.dataSource" />
+		<property name="typeAliasesPackage"
+			value="com.dianping.ba.es.demo.dao.po" />
+		<!--<property name="plugins">-->
+			<!--<array>-->
+				<!--<bean class="com.github.pagehelper.PageHelper">-->
+					<!--<property name="properties">-->
+						<!--<value>-->
+							<!--dialect=mysql-->
+							<!--reasonable=true-->
+						<!--</value>-->
+					<!--</property>-->
+				<!--</bean>-->
+			<!--</array>-->
+		<!--</property>-->
+	</bean>
+
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage"
+			value="com.dianping.ba.es.demo.dao" />
+		<property name="sqlSessionFactoryBeanName" value="dao.sqlSessionFactory" />
+	</bean>
+
+</beans>
