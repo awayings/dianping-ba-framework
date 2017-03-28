@@ -35,10 +35,10 @@
 
         <!-- ++++++++++++++++++++++++++++++++++++ DP Framework versions ++++++++++++++++++++++++++++++++++++ -->
         <inf.bom.version>1.1.11</inf.bom.version>
+        <mybatis.generator.plugin.version>1.0-SNAPSHOT</mybatis.generator.plugin.version>
 
         <!-- ++++++++++++++++++++++++++++++++++++ Pigeon versions ++++++++++++++++++++++++++++++++++++ -->
         <workflow-message-api-version>0.0.9-SNAPSHOT</workflow-message-api-version>
-
 
         <!-- ++++++++++++++++++++++++++++++++++++ Overwrite parent version ++++++++++++++++++++++++++++++++++++ -->
         <!--<xmd-log4j2.version>1.0.0</xmd-log4j2.version>-->
@@ -54,6 +54,13 @@
                 <version>${inf.bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sankuai.meituan</groupId>
+                <artifactId>mybatis.generator.plugin</artifactId>
+                <version>${mybatis.generator.plugin.version}</version>
+                <scope>test</scope>
             </dependency>
 
         </dependencies>
