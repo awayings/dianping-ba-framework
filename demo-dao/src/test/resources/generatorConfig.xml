@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
 
-    <classPathEntry location="/Users/jason/projects/idea/ba-es-evaluation/ba-es-evaluation-web/target/ba-es-evaluation-web-1.0.1-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.37.jar"/>
+    <!--<classPathEntry location="/Users/jason/projects/idea/ba-es-evaluation/ba-es-evaluation-web/target/ba-es-evaluation-web-1.0.1-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.37.jar"/>-->
 
     <context id="yihaomen_mysql_tables" targetRuntime="MyBatis3">
 
@@ -16,11 +16,11 @@
         </commentGenerator>
         <!-- 注释控制完毕 -->
 
-        <!-- 数据库连接 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.1.77.21:3306/BAEvaluation?characterEncoding=utf8"
-                        userId="evaluation"
-                        password="dp!@WFoDQYDeo">
+        <!-- 数据库连接 set by code -->
+        <jdbcConnection driverClass=""
+                        connectionURL=""
+                        userId=""
+                        password="">
         </jdbcConnection>
 
         <javaTypeResolver >
@@ -28,23 +28,23 @@
         </javaTypeResolver>
 
         <!-- 数据表对应的model 层  -->
-        <javaModelGenerator targetPackage="com.dianping.ba.evaluation.saas.infrastructure.po" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.dianping.ba.es.demo.generate.dao.po" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
         <!-- sql mapper 隐射配置文件 -->
-        <sqlMapGenerator targetPackage="com.dianping.ba.evaluation.saas.infrastructure.dao"  targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="com/dianping/ba/es/demo/generate/dao"  targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
         <!-- 在ibatis2 中是dao层，但在mybatis3中，其实就是mapper接口 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dianping.ba.evaluation.saas.infrastructure"  targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dianping.ba.es.demo.generate.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
         <!-- 要对那些数据表进行生成操作，必须要有一个. -->
-        <table schema="BAEvaluation" tableName="InvitedEvaluationDetail" domainObjectName="InvitedEvaluationDetail"
+        <table schema="DianPingBA_Account" tableName="DP_Account" domainObjectName="DPAccount"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="false">

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="%d{yyyy/MM/dd HH:mm:ss.SSS} %t [%p] %c{1} (%F:%L) %msg%n" />
+        </Console>
+
+        <!--XMDFile异步磁盘日志配置示例-->
+        <!--默认按天&按512M文件大小切分日志，默认最多保留30个日志文件-->
+        <!--注意：fileName前会自动增加文件路径，只配置文件名即可-->
+        <!-- 上海侧配置示例 -->
+        <XMDFile name="SERVICE-LOG" fileName="service.log" xmdFilePath="/data/applogs"></XMDFile>
+
+        <!--可选配置：ERROR日志、WARN日志单独输出到一个文件-->
+        <XMDFile name="ERROR-LOG" fileName="error.log" xmdFilePath="/data/applogs">
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+        </XMDFile>
+        <XMDFile name="WARN-LOG" fileName="warn.log" xmdFilePath="/data/applogs">
+            <Filters>
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </XMDFile>
+
+        <XMDFile name="ibatis-log" fileName="ibatis.log" xmdFilePath="/data/applogs"></XMDFile>
+
+        <Scribe name="ScribeAppender">
+            <!-- 远程日志默认使用appkey作为日志名(app.properties文件中的app.name字段)，也可以选择用如下方式自定义scribeCategory。scribeCategory优先级高于appkey-->
+            <!-- <Property name="scribeCategory">data_update_test_lc</Property> -->
+            <LcLayout/>
+        </Scribe>
+        <Async name="ScribeAsyncAppender" blocking="false">
+            <AppenderRef ref="ScribeAppender"/>
+        </Async>
+    </appenders>
+
+    <loggers>
+        <!--定制化配置示例：可以对某个group单独设置logger-->
+        <!--若希望日志落地本地文件，需要配置本appender-ref-->
+
+        <logger name="com.ibatis" additivity="false" level="warn">
+        </logger>
+        <logger name="java.sql.Connection" additivity="false" level="warn">
+        </logger>
+        <logger name="java.sql.PreparedStatement" additivity="false" level="warn">
+        </logger>
+        <logger name="com.dianping.trace" additivity="false" level="info">
+        </logger>
+
+        <logger name="com.dianping.lion.client" level="WARN" additivity="false"/>
+
+        <root level="info">
+            <!--控制台输出推荐只在本地调试时使用，线上将该配置去掉-->
+            <appender-ref ref="Console" />
+            <appender-ref ref="SERVICE-LOG" />
+            <appender-ref ref="ERROR-LOG" />                <!--ERROR日志单独输出到一个文件-->
+            <appender-ref ref="WARN-LOG" />                 <!--ERROR&WARN日志单独输出到一个文件-->
+            <appender-ref ref="ScribeAsyncAppender" />          <!--日志传入远程日志中心 -->
+        </root>
+    </loggers>
+</configuration>

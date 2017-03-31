@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dianping.ba.es.demo.generate.dao.DPAccountMapper" >
+  <resultMap id="BaseResultMap" type="com.dianping.ba.es.demo.generate.dao.po.DPAccount" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="AccountType" property="accounttype" jdbcType="TINYINT" />
+    <result column="Name" property="name" jdbcType="VARCHAR" />
+    <result column="IDNumber" property="idnumber" jdbcType="VARCHAR" />
+    <result column="EmployeeNumber" property="employeenumber" jdbcType="VARCHAR" />
+    <result column="LoginId" property="loginid" jdbcType="INTEGER" />
+    <result column="SysStatus" property="sysstatus" jdbcType="TINYINT" />
+    <result column="Gmail" property="gmail" jdbcType="VARCHAR" />
+    <result column="GmailStatus" property="gmailstatus" jdbcType="TINYINT" />
+    <result column="AD" property="ad" jdbcType="VARCHAR" />
+    <result column="ADStatus" property="adstatus" jdbcType="TINYINT" />
+    <result column="AddTime" property="addtime" jdbcType="TIMESTAMP" />
+    <result column="UpdateTime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="Gmail2" property="gmail2" jdbcType="VARCHAR" />
+    <result column="Gmail2Status" property="gmail2status" jdbcType="TINYINT" />
+    <result column="IsFrozen" property="isfrozen" jdbcType="TINYINT" />
+    <result column="PasswordUpdateTime" property="passwordupdatetime" jdbcType="TIMESTAMP" />
+    <result column="Office1" property="office1" jdbcType="VARCHAR" />
+    <result column="Office1Status" property="office1status" jdbcType="TINYINT" />
+    <result column="Office1LicenseType" property="office1licensetype" jdbcType="TINYINT" />
+    <result column="Office2" property="office2" jdbcType="VARCHAR" />
+    <result column="Office2Status" property="office2status" jdbcType="TINYINT" />
+    <result column="Office2LicenseType" property="office2licensetype" jdbcType="TINYINT" />
+    <result column="Office2Type" property="office2type" jdbcType="TINYINT" />
+    <result column="CtripCard" property="ctripcard" jdbcType="VARCHAR" />
+    <result column="PauseTime" property="pausetime" jdbcType="TIMESTAMP" />
+    <result column="TransferEmail" property="transferemail" jdbcType="VARCHAR" />
+    <result column="DeleteTime" property="deletetime" jdbcType="TIMESTAMP" />
+    <result column="Encrypt" property="encrypt" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Id, AccountType, Name, IDNumber, EmployeeNumber, LoginId, SysStatus, Gmail, GmailStatus, 
+    AD, ADStatus, AddTime, UpdateTime, Gmail2, Gmail2Status, IsFrozen, PasswordUpdateTime, 
+    Office1, Office1Status, Office1LicenseType, Office2, Office2Status, Office2LicenseType, 
+    Office2Type, CtripCard, PauseTime, TransferEmail, DeleteTime, Encrypt
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from DP_Account
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from DP_Account
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from DP_Account
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountExample" >
+    delete from DP_Account
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccount" >
+    insert into DP_Account (Id, AccountType, Name, 
+      IDNumber, EmployeeNumber, LoginId, 
+      SysStatus, Gmail, GmailStatus, 
+      AD, ADStatus, AddTime, 
+      UpdateTime, Gmail2, Gmail2Status, 
+      IsFrozen, PasswordUpdateTime, Office1, 
+      Office1Status, Office1LicenseType, Office2, 
+      Office2Status, Office2LicenseType, Office2Type, 
+      CtripCard, PauseTime, TransferEmail, 
+      DeleteTime, Encrypt)
+    values (#{id,jdbcType=INTEGER}, #{accounttype,jdbcType=TINYINT}, #{name,jdbcType=VARCHAR}, 
+      #{idnumber,jdbcType=VARCHAR}, #{employeenumber,jdbcType=VARCHAR}, #{loginid,jdbcType=INTEGER}, 
+      #{sysstatus,jdbcType=TINYINT}, #{gmail,jdbcType=VARCHAR}, #{gmailstatus,jdbcType=TINYINT}, 
+      #{ad,jdbcType=VARCHAR}, #{adstatus,jdbcType=TINYINT}, #{addtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{gmail2,jdbcType=VARCHAR}, #{gmail2status,jdbcType=TINYINT}, 
+      #{isfrozen,jdbcType=TINYINT}, #{passwordupdatetime,jdbcType=TIMESTAMP}, #{office1,jdbcType=VARCHAR}, 
+      #{office1status,jdbcType=TINYINT}, #{office1licensetype,jdbcType=TINYINT}, #{office2,jdbcType=VARCHAR}, 
+      #{office2status,jdbcType=TINYINT}, #{office2licensetype,jdbcType=TINYINT}, #{office2type,jdbcType=TINYINT}, 
+      #{ctripcard,jdbcType=VARCHAR}, #{pausetime,jdbcType=TIMESTAMP}, #{transferemail,jdbcType=VARCHAR}, 
+      #{deletetime,jdbcType=TIMESTAMP}, #{encrypt,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccount" >
+    insert into DP_Account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="accounttype != null" >
+        AccountType,
+      </if>
+      <if test="name != null" >
+        Name,
+      </if>
+      <if test="idnumber != null" >
+        IDNumber,
+      </if>
+      <if test="employeenumber != null" >
+        EmployeeNumber,
+      </if>
+      <if test="loginid != null" >
+        LoginId,
+      </if>
+      <if test="sysstatus != null" >
+        SysStatus,
+      </if>
+      <if test="gmail != null" >
+        Gmail,
+      </if>
+      <if test="gmailstatus != null" >
+        GmailStatus,
+      </if>
+      <if test="ad != null" >
+        AD,
+      </if>
+      <if test="adstatus != null" >
+        ADStatus,
+      </if>
+      <if test="addtime != null" >
+        AddTime,
+      </if>
+      <if test="updatetime != null" >
+        UpdateTime,
+      </if>
+      <if test="gmail2 != null" >
+        Gmail2,
+      </if>
+      <if test="gmail2status != null" >
+        Gmail2Status,
+      </if>
+      <if test="isfrozen != null" >
+        IsFrozen,
+      </if>
+      <if test="passwordupdatetime != null" >
+        PasswordUpdateTime,
+      </if>
+      <if test="office1 != null" >
+        Office1,
+      </if>
+      <if test="office1status != null" >
+        Office1Status,
+      </if>
+      <if test="office1licensetype != null" >
+        Office1LicenseType,
+      </if>
+      <if test="office2 != null" >
+        Office2,
+      </if>
+      <if test="office2status != null" >
+        Office2Status,
+      </if>
+      <if test="office2licensetype != null" >
+        Office2LicenseType,
+      </if>
+      <if test="office2type != null" >
+        Office2Type,
+      </if>
+      <if test="ctripcard != null" >
+        CtripCard,
+      </if>
+      <if test="pausetime != null" >
+        PauseTime,
+      </if>
+      <if test="transferemail != null" >
+        TransferEmail,
+      </if>
+      <if test="deletetime != null" >
+        DeleteTime,
+      </if>
+      <if test="encrypt != null" >
+        Encrypt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="accounttype != null" >
+        #{accounttype,jdbcType=TINYINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idnumber != null" >
+        #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="employeenumber != null" >
+        #{employeenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="loginid != null" >
+        #{loginid,jdbcType=INTEGER},
+      </if>
+      <if test="sysstatus != null" >
+        #{sysstatus,jdbcType=TINYINT},
+      </if>
+      <if test="gmail != null" >
+        #{gmail,jdbcType=VARCHAR},
+      </if>
+      <if test="gmailstatus != null" >
+        #{gmailstatus,jdbcType=TINYINT},
+      </if>
+      <if test="ad != null" >
+        #{ad,jdbcType=VARCHAR},
+      </if>
+      <if test="adstatus != null" >
+        #{adstatus,jdbcType=TINYINT},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmail2 != null" >
+        #{gmail2,jdbcType=VARCHAR},
+      </if>
+      <if test="gmail2status != null" >
+        #{gmail2status,jdbcType=TINYINT},
+      </if>
+      <if test="isfrozen != null" >
+        #{isfrozen,jdbcType=TINYINT},
+      </if>
+      <if test="passwordupdatetime != null" >
+        #{passwordupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="office1 != null" >
+        #{office1,jdbcType=VARCHAR},
+      </if>
+      <if test="office1status != null" >
+        #{office1status,jdbcType=TINYINT},
+      </if>
+      <if test="office1licensetype != null" >
+        #{office1licensetype,jdbcType=TINYINT},
+      </if>
+      <if test="office2 != null" >
+        #{office2,jdbcType=VARCHAR},
+      </if>
+      <if test="office2status != null" >
+        #{office2status,jdbcType=TINYINT},
+      </if>
+      <if test="office2licensetype != null" >
+        #{office2licensetype,jdbcType=TINYINT},
+      </if>
+      <if test="office2type != null" >
+        #{office2type,jdbcType=TINYINT},
+      </if>
+      <if test="ctripcard != null" >
+        #{ctripcard,jdbcType=VARCHAR},
+      </if>
+      <if test="pausetime != null" >
+        #{pausetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transferemail != null" >
+        #{transferemail,jdbcType=VARCHAR},
+      </if>
+      <if test="deletetime != null" >
+        #{deletetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="encrypt != null" >
+        #{encrypt,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountExample" resultType="java.lang.Integer" >
+    select count(*) from DP_Account
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update DP_Account
+    <set >
+      <if test="record.id != null" >
+        Id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.accounttype != null" >
+        AccountType = #{record.accounttype,jdbcType=TINYINT},
+      </if>
+      <if test="record.name != null" >
+        Name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idnumber != null" >
+        IDNumber = #{record.idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeenumber != null" >
+        EmployeeNumber = #{record.employeenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loginid != null" >
+        LoginId = #{record.loginid,jdbcType=INTEGER},
+      </if>
+      <if test="record.sysstatus != null" >
+        SysStatus = #{record.sysstatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.gmail != null" >
+        Gmail = #{record.gmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gmailstatus != null" >
+        GmailStatus = #{record.gmailstatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.ad != null" >
+        AD = #{record.ad,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adstatus != null" >
+        ADStatus = #{record.adstatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.addtime != null" >
+        AddTime = #{record.addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        UpdateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmail2 != null" >
+        Gmail2 = #{record.gmail2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gmail2status != null" >
+        Gmail2Status = #{record.gmail2status,jdbcType=TINYINT},
+      </if>
+      <if test="record.isfrozen != null" >
+        IsFrozen = #{record.isfrozen,jdbcType=TINYINT},
+      </if>
+      <if test="record.passwordupdatetime != null" >
+        PasswordUpdateTime = #{record.passwordupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.office1 != null" >
+        Office1 = #{record.office1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.office1status != null" >
+        Office1Status = #{record.office1status,jdbcType=TINYINT},
+      </if>
+      <if test="record.office1licensetype != null" >
+        Office1LicenseType = #{record.office1licensetype,jdbcType=TINYINT},
+      </if>
+      <if test="record.office2 != null" >
+        Office2 = #{record.office2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.office2status != null" >
+        Office2Status = #{record.office2status,jdbcType=TINYINT},
+      </if>
+      <if test="record.office2licensetype != null" >
+        Office2LicenseType = #{record.office2licensetype,jdbcType=TINYINT},
+      </if>
+      <if test="record.office2type != null" >
+        Office2Type = #{record.office2type,jdbcType=TINYINT},
+      </if>
+      <if test="record.ctripcard != null" >
+        CtripCard = #{record.ctripcard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pausetime != null" >
+        PauseTime = #{record.pausetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.transferemail != null" >
+        TransferEmail = #{record.transferemail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deletetime != null" >
+        DeleteTime = #{record.deletetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.encrypt != null" >
+        Encrypt = #{record.encrypt,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update DP_Account
+    set Id = #{record.id,jdbcType=INTEGER},
+      AccountType = #{record.accounttype,jdbcType=TINYINT},
+      Name = #{record.name,jdbcType=VARCHAR},
+      IDNumber = #{record.idnumber,jdbcType=VARCHAR},
+      EmployeeNumber = #{record.employeenumber,jdbcType=VARCHAR},
+      LoginId = #{record.loginid,jdbcType=INTEGER},
+      SysStatus = #{record.sysstatus,jdbcType=TINYINT},
+      Gmail = #{record.gmail,jdbcType=VARCHAR},
+      GmailStatus = #{record.gmailstatus,jdbcType=TINYINT},
+      AD = #{record.ad,jdbcType=VARCHAR},
+      ADStatus = #{record.adstatus,jdbcType=TINYINT},
+      AddTime = #{record.addtime,jdbcType=TIMESTAMP},
+      UpdateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      Gmail2 = #{record.gmail2,jdbcType=VARCHAR},
+      Gmail2Status = #{record.gmail2status,jdbcType=TINYINT},
+      IsFrozen = #{record.isfrozen,jdbcType=TINYINT},
+      PasswordUpdateTime = #{record.passwordupdatetime,jdbcType=TIMESTAMP},
+      Office1 = #{record.office1,jdbcType=VARCHAR},
+      Office1Status = #{record.office1status,jdbcType=TINYINT},
+      Office1LicenseType = #{record.office1licensetype,jdbcType=TINYINT},
+      Office2 = #{record.office2,jdbcType=VARCHAR},
+      Office2Status = #{record.office2status,jdbcType=TINYINT},
+      Office2LicenseType = #{record.office2licensetype,jdbcType=TINYINT},
+      Office2Type = #{record.office2type,jdbcType=TINYINT},
+      CtripCard = #{record.ctripcard,jdbcType=VARCHAR},
+      PauseTime = #{record.pausetime,jdbcType=TIMESTAMP},
+      TransferEmail = #{record.transferemail,jdbcType=VARCHAR},
+      DeleteTime = #{record.deletetime,jdbcType=TIMESTAMP},
+      Encrypt = #{record.encrypt,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccount" >
+    update DP_Account
+    <set >
+      <if test="accounttype != null" >
+        AccountType = #{accounttype,jdbcType=TINYINT},
+      </if>
+      <if test="name != null" >
+        Name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idnumber != null" >
+        IDNumber = #{idnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="employeenumber != null" >
+        EmployeeNumber = #{employeenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="loginid != null" >
+        LoginId = #{loginid,jdbcType=INTEGER},
+      </if>
+      <if test="sysstatus != null" >
+        SysStatus = #{sysstatus,jdbcType=TINYINT},
+      </if>
+      <if test="gmail != null" >
+        Gmail = #{gmail,jdbcType=VARCHAR},
+      </if>
+      <if test="gmailstatus != null" >
+        GmailStatus = #{gmailstatus,jdbcType=TINYINT},
+      </if>
+      <if test="ad != null" >
+        AD = #{ad,jdbcType=VARCHAR},
+      </if>
+      <if test="adstatus != null" >
+        ADStatus = #{adstatus,jdbcType=TINYINT},
+      </if>
+      <if test="addtime != null" >
+        AddTime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        UpdateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmail2 != null" >
+        Gmail2 = #{gmail2,jdbcType=VARCHAR},
+      </if>
+      <if test="gmail2status != null" >
+        Gmail2Status = #{gmail2status,jdbcType=TINYINT},
+      </if>
+      <if test="isfrozen != null" >
+        IsFrozen = #{isfrozen,jdbcType=TINYINT},
+      </if>
+      <if test="passwordupdatetime != null" >
+        PasswordUpdateTime = #{passwordupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="office1 != null" >
+        Office1 = #{office1,jdbcType=VARCHAR},
+      </if>
+      <if test="office1status != null" >
+        Office1Status = #{office1status,jdbcType=TINYINT},
+      </if>
+      <if test="office1licensetype != null" >
+        Office1LicenseType = #{office1licensetype,jdbcType=TINYINT},
+      </if>
+      <if test="office2 != null" >
+        Office2 = #{office2,jdbcType=VARCHAR},
+      </if>
+      <if test="office2status != null" >
+        Office2Status = #{office2status,jdbcType=TINYINT},
+      </if>
+      <if test="office2licensetype != null" >
+        Office2LicenseType = #{office2licensetype,jdbcType=TINYINT},
+      </if>
+      <if test="office2type != null" >
+        Office2Type = #{office2type,jdbcType=TINYINT},
+      </if>
+      <if test="ctripcard != null" >
+        CtripCard = #{ctripcard,jdbcType=VARCHAR},
+      </if>
+      <if test="pausetime != null" >
+        PauseTime = #{pausetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transferemail != null" >
+        TransferEmail = #{transferemail,jdbcType=VARCHAR},
+      </if>
+      <if test="deletetime != null" >
+        DeleteTime = #{deletetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="encrypt != null" >
+        Encrypt = #{encrypt,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccount" >
+    update DP_Account
+    set AccountType = #{accounttype,jdbcType=TINYINT},
+      Name = #{name,jdbcType=VARCHAR},
+      IDNumber = #{idnumber,jdbcType=VARCHAR},
+      EmployeeNumber = #{employeenumber,jdbcType=VARCHAR},
+      LoginId = #{loginid,jdbcType=INTEGER},
+      SysStatus = #{sysstatus,jdbcType=TINYINT},
+      Gmail = #{gmail,jdbcType=VARCHAR},
+      GmailStatus = #{gmailstatus,jdbcType=TINYINT},
+      AD = #{ad,jdbcType=VARCHAR},
+      ADStatus = #{adstatus,jdbcType=TINYINT},
+      AddTime = #{addtime,jdbcType=TIMESTAMP},
+      UpdateTime = #{updatetime,jdbcType=TIMESTAMP},
+      Gmail2 = #{gmail2,jdbcType=VARCHAR},
+      Gmail2Status = #{gmail2status,jdbcType=TINYINT},
+      IsFrozen = #{isfrozen,jdbcType=TINYINT},
+      PasswordUpdateTime = #{passwordupdatetime,jdbcType=TIMESTAMP},
+      Office1 = #{office1,jdbcType=VARCHAR},
+      Office1Status = #{office1status,jdbcType=TINYINT},
+      Office1LicenseType = #{office1licensetype,jdbcType=TINYINT},
+      Office2 = #{office2,jdbcType=VARCHAR},
+      Office2Status = #{office2status,jdbcType=TINYINT},
+      Office2LicenseType = #{office2licensetype,jdbcType=TINYINT},
+      Office2Type = #{office2type,jdbcType=TINYINT},
+      CtripCard = #{ctripcard,jdbcType=VARCHAR},
+      PauseTime = #{pausetime,jdbcType=TIMESTAMP},
+      TransferEmail = #{transferemail,jdbcType=VARCHAR},
+      DeleteTime = #{deletetime,jdbcType=TIMESTAMP},
+      Encrypt = #{encrypt,jdbcType=VARCHAR}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

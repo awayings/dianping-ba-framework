@@ -17,7 +17,7 @@
 	<bean id="dao.sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dao.dataSource" />
 		<property name="typeAliasesPackage"
-			value="com.dianping.ba.es.demo.dao.po" />
+			value="com.dianping.ba.es.demo.generate.dao.po,com.dianping.ba.es.demo.dao.po" />
 		<!--<property name="plugins">-->
 			<!--<array>-->
 				<!--<bean class="com.github.pagehelper.PageHelper">-->
@@ -35,7 +35,7 @@
 	<!-- scan for mappers and let them be autowired -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage"
-			value="com.dianping.ba.es.demo.dao" />
+			value="com.dianping.ba.es.demo.generate.dao,com.dianping.ba.es.demo.dao" />
 		<property name="sqlSessionFactoryBeanName" value="dao.sqlSessionFactory" />
 	</bean>
 
