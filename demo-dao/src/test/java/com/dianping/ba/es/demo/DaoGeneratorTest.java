@@ -18,18 +18,10 @@ import java.sql.SQLException;
 public class DaoGeneratorTest extends TestBase {
 
     @Test
-    public void query(){
-// Sample
-//        new ExecuteGenerator()
-//                .setDatabaseUrl(ConfigUtilAdapter.getString("jdbc_url"))
-//                .setDatabaseUsername(ConfigUtilAdapter.getString("jdbc_username"))
-//                .setDatabasePassword(ConfigUtilAdapter.getString("jdbc_password"))
-//                .setJavaCodeBasePath(MtDefaultWebBaseTest.calculateJavaCodeDir())
-//                .setResourcesBasePath(MtDefaultWebBaseTest.calculateResourcesDir() + "/base/")
-//                .setPageClass(Page.class)
-//                .invoke()
+    public void generate(){
 
         try {
+
             new ExecuteGenerator()
                     // 数据库的链接方式可以从rds.dp平台上查询到配置名称。比如:dianpingba_account-m3-write
                     // 使用配置名称去lion配置当中搜索到对应的数据的名字。
@@ -86,6 +78,7 @@ public class DaoGeneratorTest extends TestBase {
 
         System.out.println("code dir:" + calculateJavaCodeDir());
         System.out.println("ressource dir:" + calculateResourcesDir());
+
     }
 
 }

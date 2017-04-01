@@ -3,62 +3,146 @@ package com.dianping.ba.es.demo.generate.dao.po;
 import java.util.Date;
 
 public class DPAccount {
+    /**
+     * 自增记录ID
+     */
     private Integer id;
 
+    /**
+     * 账号类型
+     */
     private Byte accounttype;
 
+    /**
+     * 姓名
+     */
     private String name;
 
+    /**
+     * 身份证号码
+     */
     private String idnumber;
 
+    /**
+     * 工号
+     */
     private String employeenumber;
 
+    /**
+     * 员工loginId
+     */
     private Integer loginid;
 
+    /**
+     * sys账号状态
+     */
     private Byte sysstatus;
 
+    /**
+     * 公司邮箱
+     */
     private String gmail;
 
+    /**
+     * 邮箱状态
+     */
     private Byte gmailstatus;
 
+    /**
+     * 域名
+     */
     private String ad;
 
+    /**
+     * 域名状态
+     */
     private Byte adstatus;
 
+    /**
+     * 添加时间
+     */
     private Date addtime;
 
+    /**
+     * 更新时间
+     */
     private Date updatetime;
 
+    /**
+     * 第二邮箱
+     */
     private String gmail2;
 
+    /**
+     * 第二邮箱状态
+     */
     private Byte gmail2status;
 
+    /**
+     * 账号是否冻结: 0,不冻结; 1, 冻结
+     */
     private Byte isfrozen;
 
+    /**
+     * 密码更新时间
+     */
     private Date passwordupdatetime;
 
+    /**
+     * 1号Office365邮箱
+     */
     private String office1;
 
+    /**
+     * 1号Office365邮箱状态, 初始化 0, 激活 1, 暂停 2, 删除 3
+     */
     private Byte office1status;
 
+    /**
+     * 1号Office365邮箱的许可类型,如果许可类型为E1，那么值为 0，如果许可类型为E3，那么值为 1
+     */
     private Byte office1licensetype;
 
+    /**
+     * 2号Office365邮箱
+     */
     private String office2;
 
+    /**
+     * 2号Office365邮箱状态, 初始化 0, 激活 1, 暂停 2, 删除 3
+     */
     private Byte office2status;
 
+    /**
+     * 2号Office365邮箱的许可类型,如果许可类型为E1，那么值为 0，如果许可类型为E3，那么值为 1
+     */
     private Byte office2licensetype;
 
+    /**
+     * 2号Office邮箱的账号类型，别名为 0 ，物理邮箱 为 1
+     */
     private Byte office2type;
 
     private String ctripcard;
 
+    /**
+     * 账号暂停时间
+     */
     private Date pausetime;
 
+    /**
+     * 离职转移邮箱,离职时可以将邮件发送到此处
+     */
     private String transferemail;
 
+    /**
+     * 删除账号时间
+     */
     private Date deletetime;
 
+    /**
+     * encrypt
+     */
     private String encrypt;
 
     public Integer getId() {
