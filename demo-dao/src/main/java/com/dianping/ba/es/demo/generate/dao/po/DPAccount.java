@@ -1,10 +1,7 @@
 package com.dianping.ba.es.demo.generate.dao.po;
 
-import lombok.Data;
-
 import java.util.Date;
 
-@Data
 public class DPAccount {
     /**
      * 自增记录ID
@@ -14,7 +11,7 @@ public class DPAccount {
     /**
      * 账号类型
      */
-    private Byte accounttype;
+    private Byte accountType;
 
     /**
      * 姓名
@@ -24,22 +21,22 @@ public class DPAccount {
     /**
      * 身份证号码
      */
-    private String idnumber;
+    private String IDNumber;
 
     /**
      * 工号
      */
-    private String employeenumber;
+    private String employeeNumber;
 
     /**
      * 员工loginId
      */
-    private Integer loginid;
+    private Integer loginId;
 
     /**
      * sys账号状态
      */
-    private Byte sysstatus;
+    private Byte sysStatus;
 
     /**
      * 公司邮箱
@@ -49,27 +46,27 @@ public class DPAccount {
     /**
      * 邮箱状态
      */
-    private Byte gmailstatus;
+    private Byte gmailStatus;
 
     /**
      * 域名
      */
-    private String ad;
+    private String AD;
 
     /**
      * 域名状态
      */
-    private Byte adstatus;
+    private Byte ADStatus;
 
     /**
      * 添加时间
      */
-    private Date addtime;
+    private Date addTime;
 
     /**
      * 更新时间
      */
-    private Date updatetime;
+    private Date updateTime;
 
     /**
      * 第二邮箱
@@ -79,17 +76,17 @@ public class DPAccount {
     /**
      * 第二邮箱状态
      */
-    private Byte gmail2status;
+    private Byte gmail2Status;
 
     /**
      * 账号是否冻结: 0,不冻结; 1, 冻结
      */
-    private Byte isfrozen;
+    private Byte isFrozen;
 
     /**
      * 密码更新时间
      */
-    private Date passwordupdatetime;
+    private Date passwordUpdateTime;
 
     /**
      * 1号Office365邮箱
@@ -99,12 +96,12 @@ public class DPAccount {
     /**
      * 1号Office365邮箱状态, 初始化 0, 激活 1, 暂停 2, 删除 3
      */
-    private Byte office1status;
+    private Byte office1Status;
 
     /**
      * 1号Office365邮箱的许可类型,如果许可类型为E1，那么值为 0，如果许可类型为E3，那么值为 1
      */
-    private Byte office1licensetype;
+    private Byte office1LicenseType;
 
     /**
      * 2号Office365邮箱
@@ -114,34 +111,34 @@ public class DPAccount {
     /**
      * 2号Office365邮箱状态, 初始化 0, 激活 1, 暂停 2, 删除 3
      */
-    private Byte office2status;
+    private Byte office2Status;
 
     /**
      * 2号Office365邮箱的许可类型,如果许可类型为E1，那么值为 0，如果许可类型为E3，那么值为 1
      */
-    private Byte office2licensetype;
+    private Byte office2LicenseType;
 
     /**
      * 2号Office邮箱的账号类型，别名为 0 ，物理邮箱 为 1
      */
-    private Byte office2type;
+    private Byte office2Type;
 
-    private String ctripcard;
+    private String ctripCard;
 
     /**
      * 账号暂停时间
      */
-    private Date pausetime;
+    private Date pauseTime;
 
     /**
      * 离职转移邮箱,离职时可以将邮件发送到此处
      */
-    private String transferemail;
+    private String transferEmail;
 
     /**
      * 删除账号时间
      */
-    private Date deletetime;
+    private Date deleteTime;
 
     /**
      * encrypt
@@ -156,12 +153,12 @@ public class DPAccount {
         this.id = id;
     }
 
-    public Byte getAccounttype() {
-        return accounttype;
+    public Byte getAccountType() {
+        return accountType;
     }
 
-    public void setAccounttype(Byte accounttype) {
-        this.accounttype = accounttype;
+    public void setAccountType(Byte accountType) {
+        this.accountType = accountType;
     }
 
     public String getName() {
@@ -172,36 +169,36 @@ public class DPAccount {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getIdnumber() {
-        return idnumber;
+    public String getIDNumber() {
+        return IDNumber;
     }
 
-    public void setIdnumber(String idnumber) {
-        this.idnumber = idnumber == null ? null : idnumber.trim();
+    public void setIDNumber(String IDNumber) {
+        this.IDNumber = IDNumber == null ? null : IDNumber.trim();
     }
 
-    public String getEmployeenumber() {
-        return employeenumber;
+    public String getEmployeeNumber() {
+        return employeeNumber;
     }
 
-    public void setEmployeenumber(String employeenumber) {
-        this.employeenumber = employeenumber == null ? null : employeenumber.trim();
+    public void setEmployeeNumber(String employeeNumber) {
+        this.employeeNumber = employeeNumber == null ? null : employeeNumber.trim();
     }
 
-    public Integer getLoginid() {
-        return loginid;
+    public Integer getLoginId() {
+        return loginId;
     }
 
-    public void setLoginid(Integer loginid) {
-        this.loginid = loginid;
+    public void setLoginId(Integer loginId) {
+        this.loginId = loginId;
     }
 
-    public Byte getSysstatus() {
-        return sysstatus;
+    public Byte getSysStatus() {
+        return sysStatus;
     }
 
-    public void setSysstatus(Byte sysstatus) {
-        this.sysstatus = sysstatus;
+    public void setSysStatus(Byte sysStatus) {
+        this.sysStatus = sysStatus;
     }
 
     public String getGmail() {
@@ -212,44 +209,44 @@ public class DPAccount {
         this.gmail = gmail == null ? null : gmail.trim();
     }
 
-    public Byte getGmailstatus() {
-        return gmailstatus;
+    public Byte getGmailStatus() {
+        return gmailStatus;
     }
 
-    public void setGmailstatus(Byte gmailstatus) {
-        this.gmailstatus = gmailstatus;
+    public void setGmailStatus(Byte gmailStatus) {
+        this.gmailStatus = gmailStatus;
     }
 
-    public String getAd() {
-        return ad;
+    public String getAD() {
+        return AD;
     }
 
-    public void setAd(String ad) {
-        this.ad = ad == null ? null : ad.trim();
+    public void setAD(String AD) {
+        this.AD = AD == null ? null : AD.trim();
     }
 
-    public Byte getAdstatus() {
-        return adstatus;
+    public Byte getADStatus() {
+        return ADStatus;
     }
 
-    public void setAdstatus(Byte adstatus) {
-        this.adstatus = adstatus;
+    public void setADStatus(Byte ADStatus) {
+        this.ADStatus = ADStatus;
     }
 
-    public Date getAddtime() {
-        return addtime;
+    public Date getAddTime() {
+        return addTime;
     }
 
-    public void setAddtime(Date addtime) {
-        this.addtime = addtime;
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
     public String getGmail2() {
@@ -260,28 +257,28 @@ public class DPAccount {
         this.gmail2 = gmail2 == null ? null : gmail2.trim();
     }
 
-    public Byte getGmail2status() {
-        return gmail2status;
+    public Byte getGmail2Status() {
+        return gmail2Status;
     }
 
-    public void setGmail2status(Byte gmail2status) {
-        this.gmail2status = gmail2status;
+    public void setGmail2Status(Byte gmail2Status) {
+        this.gmail2Status = gmail2Status;
     }
 
-    public Byte getIsfrozen() {
-        return isfrozen;
+    public Byte getIsFrozen() {
+        return isFrozen;
     }
 
-    public void setIsfrozen(Byte isfrozen) {
-        this.isfrozen = isfrozen;
+    public void setIsFrozen(Byte isFrozen) {
+        this.isFrozen = isFrozen;
     }
 
-    public Date getPasswordupdatetime() {
-        return passwordupdatetime;
+    public Date getPasswordUpdateTime() {
+        return passwordUpdateTime;
     }
 
-    public void setPasswordupdatetime(Date passwordupdatetime) {
-        this.passwordupdatetime = passwordupdatetime;
+    public void setPasswordUpdateTime(Date passwordUpdateTime) {
+        this.passwordUpdateTime = passwordUpdateTime;
     }
 
     public String getOffice1() {
@@ -292,20 +289,20 @@ public class DPAccount {
         this.office1 = office1 == null ? null : office1.trim();
     }
 
-    public Byte getOffice1status() {
-        return office1status;
+    public Byte getOffice1Status() {
+        return office1Status;
     }
 
-    public void setOffice1status(Byte office1status) {
-        this.office1status = office1status;
+    public void setOffice1Status(Byte office1Status) {
+        this.office1Status = office1Status;
     }
 
-    public Byte getOffice1licensetype() {
-        return office1licensetype;
+    public Byte getOffice1LicenseType() {
+        return office1LicenseType;
     }
 
-    public void setOffice1licensetype(Byte office1licensetype) {
-        this.office1licensetype = office1licensetype;
+    public void setOffice1LicenseType(Byte office1LicenseType) {
+        this.office1LicenseType = office1LicenseType;
     }
 
     public String getOffice2() {
@@ -316,60 +313,60 @@ public class DPAccount {
         this.office2 = office2 == null ? null : office2.trim();
     }
 
-    public Byte getOffice2status() {
-        return office2status;
+    public Byte getOffice2Status() {
+        return office2Status;
     }
 
-    public void setOffice2status(Byte office2status) {
-        this.office2status = office2status;
+    public void setOffice2Status(Byte office2Status) {
+        this.office2Status = office2Status;
     }
 
-    public Byte getOffice2licensetype() {
-        return office2licensetype;
+    public Byte getOffice2LicenseType() {
+        return office2LicenseType;
     }
 
-    public void setOffice2licensetype(Byte office2licensetype) {
-        this.office2licensetype = office2licensetype;
+    public void setOffice2LicenseType(Byte office2LicenseType) {
+        this.office2LicenseType = office2LicenseType;
     }
 
-    public Byte getOffice2type() {
-        return office2type;
+    public Byte getOffice2Type() {
+        return office2Type;
     }
 
-    public void setOffice2type(Byte office2type) {
-        this.office2type = office2type;
+    public void setOffice2Type(Byte office2Type) {
+        this.office2Type = office2Type;
     }
 
-    public String getCtripcard() {
-        return ctripcard;
+    public String getCtripCard() {
+        return ctripCard;
     }
 
-    public void setCtripcard(String ctripcard) {
-        this.ctripcard = ctripcard == null ? null : ctripcard.trim();
+    public void setCtripCard(String ctripCard) {
+        this.ctripCard = ctripCard == null ? null : ctripCard.trim();
     }
 
-    public Date getPausetime() {
-        return pausetime;
+    public Date getPauseTime() {
+        return pauseTime;
     }
 
-    public void setPausetime(Date pausetime) {
-        this.pausetime = pausetime;
+    public void setPauseTime(Date pauseTime) {
+        this.pauseTime = pauseTime;
     }
 
-    public String getTransferemail() {
-        return transferemail;
+    public String getTransferEmail() {
+        return transferEmail;
     }
 
-    public void setTransferemail(String transferemail) {
-        this.transferemail = transferemail == null ? null : transferemail.trim();
+    public void setTransferEmail(String transferEmail) {
+        this.transferEmail = transferEmail == null ? null : transferEmail.trim();
     }
 
-    public Date getDeletetime() {
-        return deletetime;
+    public Date getDeleteTime() {
+        return deleteTime;
     }
 
-    public void setDeletetime(Date deletetime) {
-        this.deletetime = deletetime;
+    public void setDeleteTime(Date deleteTime) {
+        this.deleteTime = deleteTime;
     }
 
     public String getEncrypt() {

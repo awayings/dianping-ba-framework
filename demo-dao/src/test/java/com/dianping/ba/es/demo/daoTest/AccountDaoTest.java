@@ -27,7 +27,7 @@ public class AccountDaoTest extends TestBase {
         System.out.println(accountDao.query(accountPO));
 //
         DPAccountExample example = new DPAccountExample();
-        example.createCriteria().andEmployeenumberEqualTo("0009562");
+        example.createCriteria().andEmployeeNumberEqualTo("0009562");
         System.out.println(dpAccountMapper.selectByExample(example));
 
     }

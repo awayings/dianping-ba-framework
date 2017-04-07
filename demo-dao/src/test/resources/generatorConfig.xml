@@ -26,6 +26,7 @@
         <!-- 数据表对应的model 层  -->
         <javaModelGenerator targetPackage="com.dianping.ba.es.demo.generate.dao.po" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
+
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
@@ -44,6 +45,7 @@
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
         </table>
 
     </context>
