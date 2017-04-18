@@ -1,14 +1,14 @@
 package com.dianping.ba.es.demo.generate.dao;
 
 import com.dianping.ba.es.demo.generate.dao.po.MailGroup;
-import com.dianping.ba.es.demo.generate.dao.po.MailGroupExample;
+import com.dianping.ba.es.demo.generate.dao.po.MailGroupCriteria;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface MailGroupMapper {
-    int countByExample(MailGroupExample example);
+    int countByExample(MailGroupCriteria example);
 
-    int deleteByExample(MailGroupExample example);
+    int deleteByExample(MailGroupCriteria example);
 
     int deleteByPrimaryKey(Integer id);
 
@@ -16,13 +16,13 @@ public interface MailGroupMapper {
 
     int insertSelective(MailGroup record);
 
-    List<MailGroup> selectByExample(MailGroupExample example);
+    List<MailGroup> selectByExample(MailGroupCriteria example);
 
     MailGroup selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") MailGroup record, @Param("example") MailGroupExample example);
+    int updateByExampleSelective(@Param("record") MailGroup record, @Param("example") MailGroupCriteria example);
 
-    int updateByExample(@Param("record") MailGroup record, @Param("example") MailGroupExample example);
+    int updateByExample(@Param("record") MailGroup record, @Param("example") MailGroupCriteria example);
 
     int updateByPrimaryKeySelective(MailGroup record);
 

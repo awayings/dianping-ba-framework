@@ -96,7 +96,7 @@
     Office1, Office1Status, Office1LicenseType, Office2, Office2Status, Office2LicenseType, 
     Office2Type, CtripCard, PauseTime, TransferEmail, DeleteTime, Encrypt
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountCriteria" >
     select
     <if test="distinct" >
       distinct
@@ -121,7 +121,7 @@
     delete from DP_Account
     where Id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountExample" >
+  <delete id="deleteByExample" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountCriteria" >
     delete from DP_Account
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -330,7 +330,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.dianping.ba.es.demo.generate.dao.po.DPAccountCriteria" resultType="java.lang.Integer" >
     select count(*) from DP_Account
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
