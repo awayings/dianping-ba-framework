@@ -1,7 +1,10 @@
 package com.dianping.ba.es.demo.generate.dao.po;
 
+import lombok.ToString;
+
 import java.util.Date;
 
+@ToString
 public class DPAccount {
     /**
      * 自增记录ID

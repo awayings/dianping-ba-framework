@@ -27,4 +27,6 @@ public interface DPAccountMapper {
     int updateByPrimaryKeySelective(DPAccount record);
 
     int updateByPrimaryKey(DPAccount record);
+
+    List<DPAccount> query(@Param("accountPO") DPAccount dpAccount);
 }
