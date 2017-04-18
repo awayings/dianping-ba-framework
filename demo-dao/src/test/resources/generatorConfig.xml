@@ -7,6 +7,9 @@
 
     <context id="dianpingAccount" targetRuntime="MyBatis3">
 
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        
         <!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
         <commentGenerator type="com.sankuai.meituan.mybatis.generator.plugins.plugins.DatabaseCommentGenerator"/>
 
@@ -48,6 +51,14 @@
                selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="true" />
         </table>
+
+        <table tableName="MailGroup" domainObjectName="MailGroup"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+
 
     </context>
 </generatorConfiguration>

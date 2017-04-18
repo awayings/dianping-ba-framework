@@ -7,6 +7,7 @@ import com.dianping.ba.es.demo.dao.DPAccountDao;
 import com.dianping.ba.es.demo.dao.po.AccountPO;
 
 import com.dianping.ba.es.demo.generate.dao.DPAccountMapper;
+import com.dianping.ba.es.demo.generate.dao.MailGroupMapper;
 import com.dianping.ba.es.demo.generate.dao.po.DPAccount;
 import com.dianping.ba.es.demo.generate.dao.po.DPAccountExample;
 import org.junit.Test;
@@ -48,6 +49,13 @@ public class AccountDaoTest extends TestBase {
         System.out.println(dpAccountDao.selectByExample(example));
         System.out.println("6");
         System.out.println(dpAccountDao.countByExample(example));
+    }
+
+    @Autowired
+    MailGroupMapper mailGroupMapper;
+    @Test
+    public void testQueryMapper(){
+        System.out.println(mailGroupMapper.selectByPrimaryKey(2));
     }
 
 }

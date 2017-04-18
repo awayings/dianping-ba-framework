@@ -1,10 +1,7 @@
 package com.dianping.ba.es.demo.generate.dao.po;
 
-import lombok.ToString;
-
 import java.util.Date;
 
-@ToString
 public class DPAccount {
     /**
      * 自增记录ID
@@ -378,5 +375,123 @@ public class DPAccount {
 
     public void setEncrypt(String encrypt) {
         this.encrypt = encrypt == null ? null : encrypt.trim();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (that == null) {
+            return false;
+        }
+        if (getClass() != that.getClass()) {
+            return false;
+        }
+        DPAccount other = (DPAccount) that;
+        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+            && (this.getAccountType() == null ? other.getAccountType() == null : this.getAccountType().equals(other.getAccountType()))
+            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
+            && (this.getIDNumber() == null ? other.getIDNumber() == null : this.getIDNumber().equals(other.getIDNumber()))
+            && (this.getEmployeeNumber() == null ? other.getEmployeeNumber() == null : this.getEmployeeNumber().equals(other.getEmployeeNumber()))
+            && (this.getLoginId() == null ? other.getLoginId() == null : this.getLoginId().equals(other.getLoginId()))
+            && (this.getSysStatus() == null ? other.getSysStatus() == null : this.getSysStatus().equals(other.getSysStatus()))
+            && (this.getGmail() == null ? other.getGmail() == null : this.getGmail().equals(other.getGmail()))
+            && (this.getGmailStatus() == null ? other.getGmailStatus() == null : this.getGmailStatus().equals(other.getGmailStatus()))
+            && (this.getAD() == null ? other.getAD() == null : this.getAD().equals(other.getAD()))
+            && (this.getADStatus() == null ? other.getADStatus() == null : this.getADStatus().equals(other.getADStatus()))
+            && (this.getAddTime() == null ? other.getAddTime() == null : this.getAddTime().equals(other.getAddTime()))
+            && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
+            && (this.getGmail2() == null ? other.getGmail2() == null : this.getGmail2().equals(other.getGmail2()))
+            && (this.getGmail2Status() == null ? other.getGmail2Status() == null : this.getGmail2Status().equals(other.getGmail2Status()))
+            && (this.getIsFrozen() == null ? other.getIsFrozen() == null : this.getIsFrozen().equals(other.getIsFrozen()))
+            && (this.getPasswordUpdateTime() == null ? other.getPasswordUpdateTime() == null : this.getPasswordUpdateTime().equals(other.getPasswordUpdateTime()))
+            && (this.getOffice1() == null ? other.getOffice1() == null : this.getOffice1().equals(other.getOffice1()))
+            && (this.getOffice1Status() == null ? other.getOffice1Status() == null : this.getOffice1Status().equals(other.getOffice1Status()))
+            && (this.getOffice1LicenseType() == null ? other.getOffice1LicenseType() == null : this.getOffice1LicenseType().equals(other.getOffice1LicenseType()))
+            && (this.getOffice2() == null ? other.getOffice2() == null : this.getOffice2().equals(other.getOffice2()))
+            && (this.getOffice2Status() == null ? other.getOffice2Status() == null : this.getOffice2Status().equals(other.getOffice2Status()))
+            && (this.getOffice2LicenseType() == null ? other.getOffice2LicenseType() == null : this.getOffice2LicenseType().equals(other.getOffice2LicenseType()))
+            && (this.getOffice2Type() == null ? other.getOffice2Type() == null : this.getOffice2Type().equals(other.getOffice2Type()))
+            && (this.getCtripCard() == null ? other.getCtripCard() == null : this.getCtripCard().equals(other.getCtripCard()))
+            && (this.getPauseTime() == null ? other.getPauseTime() == null : this.getPauseTime().equals(other.getPauseTime()))
+            && (this.getTransferEmail() == null ? other.getTransferEmail() == null : this.getTransferEmail().equals(other.getTransferEmail()))
+            && (this.getDeleteTime() == null ? other.getDeleteTime() == null : this.getDeleteTime().equals(other.getDeleteTime()))
+            && (this.getEncrypt() == null ? other.getEncrypt() == null : this.getEncrypt().equals(other.getEncrypt()));
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getAccountType() == null) ? 0 : getAccountType().hashCode());
+        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
+        result = prime * result + ((getIDNumber() == null) ? 0 : getIDNumber().hashCode());
+        result = prime * result + ((getEmployeeNumber() == null) ? 0 : getEmployeeNumber().hashCode());
+        result = prime * result + ((getLoginId() == null) ? 0 : getLoginId().hashCode());
+        result = prime * result + ((getSysStatus() == null) ? 0 : getSysStatus().hashCode());
+        result = prime * result + ((getGmail() == null) ? 0 : getGmail().hashCode());
+        result = prime * result + ((getGmailStatus() == null) ? 0 : getGmailStatus().hashCode());
+        result = prime * result + ((getAD() == null) ? 0 : getAD().hashCode());
+        result = prime * result + ((getADStatus() == null) ? 0 : getADStatus().hashCode());
+        result = prime * result + ((getAddTime() == null) ? 0 : getAddTime().hashCode());
+        result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
+        result = prime * result + ((getGmail2() == null) ? 0 : getGmail2().hashCode());
+        result = prime * result + ((getGmail2Status() == null) ? 0 : getGmail2Status().hashCode());
+        result = prime * result + ((getIsFrozen() == null) ? 0 : getIsFrozen().hashCode());
+        result = prime * result + ((getPasswordUpdateTime() == null) ? 0 : getPasswordUpdateTime().hashCode());
+        result = prime * result + ((getOffice1() == null) ? 0 : getOffice1().hashCode());
+        result = prime * result + ((getOffice1Status() == null) ? 0 : getOffice1Status().hashCode());
+        result = prime * result + ((getOffice1LicenseType() == null) ? 0 : getOffice1LicenseType().hashCode());
+        result = prime * result + ((getOffice2() == null) ? 0 : getOffice2().hashCode());
+        result = prime * result + ((getOffice2Status() == null) ? 0 : getOffice2Status().hashCode());
+        result = prime * result + ((getOffice2LicenseType() == null) ? 0 : getOffice2LicenseType().hashCode());
+        result = prime * result + ((getOffice2Type() == null) ? 0 : getOffice2Type().hashCode());
+        result = prime * result + ((getCtripCard() == null) ? 0 : getCtripCard().hashCode());
+        result = prime * result + ((getPauseTime() == null) ? 0 : getPauseTime().hashCode());
+        result = prime * result + ((getTransferEmail() == null) ? 0 : getTransferEmail().hashCode());
+        result = prime * result + ((getDeleteTime() == null) ? 0 : getDeleteTime().hashCode());
+        result = prime * result + ((getEncrypt() == null) ? 0 : getEncrypt().hashCode());
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", accountType=").append(accountType);
+        sb.append(", name=").append(name);
+        sb.append(", IDNumber=").append(IDNumber);
+        sb.append(", employeeNumber=").append(employeeNumber);
+        sb.append(", loginId=").append(loginId);
+        sb.append(", sysStatus=").append(sysStatus);
+        sb.append(", gmail=").append(gmail);
+        sb.append(", gmailStatus=").append(gmailStatus);
+        sb.append(", AD=").append(AD);
+        sb.append(", ADStatus=").append(ADStatus);
+        sb.append(", addTime=").append(addTime);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", gmail2=").append(gmail2);
+        sb.append(", gmail2Status=").append(gmail2Status);
+        sb.append(", isFrozen=").append(isFrozen);
+        sb.append(", passwordUpdateTime=").append(passwordUpdateTime);
+        sb.append(", office1=").append(office1);
+        sb.append(", office1Status=").append(office1Status);
+        sb.append(", office1LicenseType=").append(office1LicenseType);
+        sb.append(", office2=").append(office2);
+        sb.append(", office2Status=").append(office2Status);
+        sb.append(", office2LicenseType=").append(office2LicenseType);
+        sb.append(", office2Type=").append(office2Type);
+        sb.append(", ctripCard=").append(ctripCard);
+        sb.append(", pauseTime=").append(pauseTime);
+        sb.append(", transferEmail=").append(transferEmail);
+        sb.append(", deleteTime=").append(deleteTime);
+        sb.append(", encrypt=").append(encrypt);
+        sb.append("]");
+        return sb.toString();
     }
 }
