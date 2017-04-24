@@ -9,6 +9,7 @@ import com.dianping.ba.es.demo.dao.po.AccountPO;
 import com.dianping.ba.es.demo.generate.dao.DPAccountMapper;
 import com.dianping.ba.es.demo.generate.dao.MailGroupMapper;
 import com.dianping.ba.es.demo.generate.dao.po.DPAccount;
+import com.dianping.ba.es.demo.generate.dao.po.DPAccountCriteria;
 import com.dianping.ba.es.demo.generate.dao.po.DPAccountExample;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class AccountDaoTest extends TestBase {
     private AccountDao accountDao;
 
 //    @Autowired
-//    private DPAccountMapper dpAccountMapper;
+//    private DPAccountMapper dpAccountMapper;===
 
     @Autowired
     DPAccountDao dpAccountDao;
@@ -33,7 +34,7 @@ public class AccountDaoTest extends TestBase {
         System.out.println("1");
         System.out.println(accountDao.query(accountPO));
 //
-        DPAccountExample example = new DPAccountExample();
+        DPAccountCriteria example = new DPAccountCriteria();
         example.createCriteria().andEmployeeNumberEqualTo("0009562");
         System.out.println("2");
 //        System.out.println(dpAccountMapper.selectByExample(example));
